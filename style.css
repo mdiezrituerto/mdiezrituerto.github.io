@@ -1,18 +1,20 @@
 /* ------------------------------------------------------------------
    Marina Díez-Rituerto — hoja de estilos común a las tres páginas
-   Papel claro, texto de alto contraste, acento verde-azulado
+   Papel claro, texto de alto contraste, acento verde vivo
 ------------------------------------------------------------------- */
 
 :root{
-  --paper:#FCFCFA;
-  --panel:#F3F4F0;
-  --ink:#1A1E24;        /* titulares */
-  --text:#2E343C;       /* texto corrido: más oscuro que antes */
-  --muted:#6B7280;      /* solo metadatos y notas al pie */
-  --line:#E4E4DE;
-  --line-soft:#EFEFEA;
-  --accent:#0F5F55;
-  --accent-dark:#0B4A42;
+  --paper:#FEFEFC;
+  --panel:#EFF4F2;
+  --ink:#101419;        /* titulares */
+  --text:#232931;       /* texto corrido */
+  --muted:#5B626B;      /* metadatos y notas al pie */
+  --line:#E2E4E0;
+  --line-soft:#EDEFEC;
+  --accent:#0D7364;
+  --accent-dark:#0A574B;
+  --accent-bg:#E4F1ED;
+  --accent-border:#C4DED7;
 
   --serif:"Newsreader",Georgia,"Times New Roman",serif;
   --sans:"Inter",system-ui,-apple-system,sans-serif;
@@ -82,7 +84,7 @@ a:hover{color:var(--accent-dark)}
 .kicker{
   font-weight:500;font-size:1rem;color:var(--muted);margin:0 0 34px;
 }
-.kicker .sep{color:#C9CBC4;margin:0 .6em}
+.kicker .sep{color:#C6C9C4;margin:0 .6em}
 .lead{
   font-family:var(--serif);font-weight:400;font-style:italic;
   font-size:clamp(1.32rem,2.5vw,1.62rem);line-height:1.5;
@@ -93,7 +95,7 @@ a:hover{color:var(--accent-dark)}
 
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:34px;font-size:1rem}
 .hero-actions a{
-  font-weight:500;border-bottom:1.5px solid rgba(15,95,85,.28);padding-bottom:2px;
+  font-weight:500;border-bottom:1.5px solid rgba(13,115,100,.3);padding-bottom:2px;
   transition:border-color .15s ease;
 }
 .hero-actions a:hover{border-bottom-color:var(--accent)}
@@ -173,7 +175,7 @@ h3.block-title .org{
 
 /* línea de cierre (proyectos / instituciones) */
 .tagline{
-  margin-top:24px;padding:18px 22px;border-left:3px solid var(--line);
+  margin-top:24px;padding:18px 22px;border-left:3px solid var(--accent-border);
   background:var(--panel);border-radius:0 3px 3px 0;
   font-family:var(--serif);font-style:italic;font-size:1.04rem;line-height:1.55;
   color:var(--ink);max-width:var(--measure);
@@ -182,12 +184,14 @@ h3.block-title .org{
   font-style:normal;font-family:var(--sans);font-size:.82rem;
   font-weight:600;color:var(--accent);display:block;margin-bottom:5px;
 }
+.tagline a{border-bottom:1.5px solid rgba(13,115,100,.32);padding-bottom:1px}
+.tagline a:hover{border-bottom-color:var(--accent)}
 
 /* campos de interés */
 .fields{display:flex;flex-wrap:wrap;gap:9px 10px;margin:0 0 30px;padding:0;list-style:none}
 .fields li{
   font-size:.92rem;font-weight:500;color:var(--accent);
-  background:#EAF2F0;border:1px solid #D6E4E1;
+  background:var(--accent-bg);border:1px solid var(--accent-border);
   border-radius:3px;padding:5px 13px;
 }
 
@@ -203,11 +207,11 @@ h3.block-title .org{
 .works .meta em{font-style:italic;color:var(--text)}
 .works .flag{
   display:inline-block;font-size:.78rem;font-weight:600;color:var(--accent);
-  background:#EAF2F0;border:1px solid #D6E4E1;border-radius:3px;padding:1px 8px;
-  margin-right:9px;vertical-align:1px;
+  background:var(--accent-bg);border:1px solid var(--accent-border);
+  border-radius:3px;padding:1px 8px;margin-right:9px;vertical-align:1px;
 }
 .works .links{margin-top:9px;font-size:.94rem}
-.works .links a{font-weight:500;border-bottom:1.5px solid rgba(15,95,85,.25);padding-bottom:1px}
+.works .links a{font-weight:500;border-bottom:1.5px solid rgba(13,115,100,.28);padding-bottom:1px}
 .works .links a:hover{border-bottom-color:var(--accent)}
 
 .footnote{margin-top:26px;color:var(--muted);font-size:.94rem;max-width:var(--measure)}
