@@ -3,1317 +3,224 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Marina Díez-Rituerto — Applied Economist</title>
-
-<meta name="description"
-      content="Marina Díez-Rituerto — applied economist working across economic research and public policy, with research on labour markets, gender, competition and decision-making.">
-
+<meta name="description" content="Marina Díez-Rituerto — applied economist working across academic research and public policy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap"
-      rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#FFFFFF;
-    --ink:#16181D;
-    --muted:#5A6169;
-    --line:#E7E8EB;
-    --accent:#274C6B;
-    --accent-d:#1B3750;
-    --rail:#FAFBFC;
+    --bg:#FFFFFF; --ink:#16181D; --muted:#5A6169; --line:#E7E8EB;
+    --accent:#274C6B; --accent-d:#1B3750; --rail:#FAFBFC;
     --serif:"IBM Plex Serif",Georgia,serif;
     --sans:"IBM Plex Sans",system-ui,sans-serif;
-    --content:680px;
-  }
-
-  *{
-    box-sizing:border-box;
-  }
-
-  html{
-    scroll-behavior:smooth;
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    html{
-      scroll-behavior:auto;
-    }
-  }
-
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--sans);
-    font-size:16.5px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-  }
-
-  a{
-    color:var(--accent);
-    text-decoration:none;
-    border-bottom:1px solid transparent;
-    transition:border-color .15s,color .15s;
-  }
-
-  a:hover{
-    color:var(--accent-d);
-    border-bottom-color:currentColor;
-  }
-
-  :focus-visible{
-    outline:2px solid var(--accent);
-    outline-offset:3px;
-    border-radius:2px;
-  }
-
-  .skip{
-    position:absolute;
-    left:-999px;
-  }
-
-  .skip:focus{
-    left:12px;
-    top:12px;
-    background:var(--ink);
-    color:#fff;
-    padding:10px 14px;
-    z-index:50;
-  }
-
-  /* =========================================================
-     LAYOUT
-     ========================================================= */
-
-  .layout{
-    display:grid;
-    grid-template-columns:320px 1fr;
-    max-width:1160px;
-    margin:0 auto;
-    min-height:100vh;
-  }
-
-  /* =========================================================
-     LEFT RAIL
-     ========================================================= */
-
-  .rail{
-    border-right:1px solid var(--line);
-    background:var(--rail);
-    padding:56px 40px;
-    position:sticky;
-    top:0;
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-  }
-
-  .photo{
-    width:112px;
-    height:112px;
-    border-radius:4px;
-    border:1px solid var(--line);
-    background:#EEF1F4;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:1.9rem;
-    color:var(--accent);
-    margin-bottom:22px;
-    overflow:hidden;
-  }
-
-  .photo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-  }
-
-  .name{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:1.72rem;
-    line-height:1.1;
-    margin:0;
-  }
-
-  .role{
-    color:var(--muted);
-    margin:8px 0 0;
-    font-size:.98rem;
-  }
-
-  .affil{
-    margin:14px 0 0;
-    font-size:.9rem;
-    color:var(--muted);
-    line-height:1.5;
-  }
-
-  .affil b{
-    color:var(--ink);
-    font-weight:500;
-  }
-
-  .nav{
-    margin-top:30px;
-    display:flex;
-    flex-direction:column;
-  }
-
-  .nav a{
-    color:var(--ink);
-    font-size:.92rem;
-    font-weight:500;
-    padding:7px 0 7px 14px;
-    border-left:2px solid var(--line);
-    border-bottom:none;
-  }
-
-  .nav a:hover{
-    color:var(--accent);
-    border-left-color:var(--accent);
-  }
-
-  .nav a.active{
-    color:var(--accent);
-    border-left-color:var(--accent);
-  }
-
-  .rail-foot{
-    margin-top:auto;
-    padding-top:28px;
-    font-size:.9rem;
-  }
-
-  .rail-foot .email{
-    display:block;
-    margin-bottom:8px;
-  }
-
-  .rail-foot .row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px 16px;
-  }
-
-  .rail-foot .row a{
-    color:var(--muted);
-  }
-
-  .rail-foot .row a:hover{
-    color:var(--accent);
-  }
-
-  /* =========================================================
-     MAIN CONTENT
-     ========================================================= */
-
-  main{
-    padding:64px 60px 100px;
-    max-width:calc(var(--content) + 120px);
-  }
-
-  section{
-    margin-bottom:62px;
-    scroll-margin-top:32px;
-  }
-
-  section:last-child{
-    margin-bottom:0;
-  }
-
-  h2{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:1.05rem;
-    color:var(--ink);
-    margin:0 0 18px;
-    padding-bottom:9px;
-    border-bottom:1px solid var(--line);
-  }
-
-  p{
-    max-width:var(--content);
-    margin:0 0 15px;
-  }
-
-  p:last-child{
-    margin-bottom:0;
-  }
-
-  /* =========================================================
-     HERO / ABOUT
-     ========================================================= */
-
-  .hero{
-    padding-bottom:10px;
-  }
-
-  .hero .eyebrow{
-    color:var(--accent);
-    font-size:.82rem;
-    font-weight:600;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    margin-bottom:14px;
-  }
-
-  .hero h2{
-    display:none;
-  }
-
-  .lead{
-    font-family:var(--serif);
-    font-weight:500;
-    font-size:1.52rem;
-    line-height:1.42;
-    margin-bottom:20px;
-    max-width:650px;
-  }
-
-  .hero-note{
-    color:var(--muted);
-    max-width:630px;
-  }
-
-  .direction{
-    margin-top:25px;
-    padding:17px 20px;
-    border-left:2px solid var(--accent);
-    background:#FAFBFC;
-    max-width:650px;
-  }
-
-  .direction p{
-    margin:0;
-    font-family:var(--serif);
-    font-size:1.03rem;
-    line-height:1.5;
-  }
-
-  /* =========================================================
-     RESEARCH / POLICY FRAME
-     ========================================================= */
-
-  .intro{
-    color:var(--muted);
-    max-width:650px;
-    margin-bottom:24px;
-  }
-
-  .research-policy{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:34px;
-    max-width:var(--content);
-  }
-
-  .column{
-    padding-top:15px;
-    border-top:2px solid var(--ink);
-  }
-
-  .column h3{
-    font-family:var(--serif);
-    font-size:1.08rem;
-    font-weight:600;
-    margin:0 0 10px;
-  }
-
-  .column p{
-    color:var(--muted);
-    font-size:.96rem;
-  }
-
-  .questions{
-    margin-top:30px;
-    padding-top:20px;
-    border-top:1px solid var(--line);
-  }
-
-  .questions h3{
-    font-family:var(--serif);
-    font-size:1.05rem;
-    margin:0 0 10px;
-  }
-
-  /* =========================================================
-     RESEARCH
-     ========================================================= */
-
-  .fields{
-    color:var(--ink);
-    max-width:var(--content);
-    margin-bottom:15px;
-  }
-
-  .fields .s{
-    color:var(--muted);
-    margin:0 .45em;
-  }
-
-  .research-description{
-    color:var(--muted);
-    max-width:var(--content);
-  }
-
-  .diss{
-    color:var(--muted);
-    font-size:.96rem;
-    margin-top:17px;
-  }
-
-  .diss em{
-    color:var(--ink);
-  }
-
-  /* =========================================================
-     POLICY
-     ========================================================= */
-
-  .work{
-    list-style:none;
-    margin:0;
-    padding:0;
-  }
-
-  .work li{
-    padding:16px 0;
-    border-top:1px solid var(--line);
-  }
-
-  .work li:first-child{
-    border-top:0;
-    padding-top:0;
-  }
-
-  .work .t{
-    font-weight:600;
-  }
-
-  .work .k{
-    color:var(--accent);
-    font-weight:500;
-    font-size:.84rem;
-    margin-left:3px;
-  }
-
-  .work p{
-    margin:4px 0 0;
-    color:var(--muted);
-    font-size:.95rem;
-  }
-
-  /* =========================================================
-     EXPERIENCE
-     ========================================================= */
-
-  .experience{
-    list-style:none;
-    margin:0;
-    padding:0;
-  }
-
-  .experience li{
-    padding:15px 0;
-    border-top:1px solid var(--line);
-  }
-
-  .experience li:first-child{
-    border-top:0;
-    padding-top:0;
-  }
-
-  .experience .t{
-    font-weight:600;
-  }
-
-  .experience .date{
-    color:var(--accent);
-    font-weight:500;
-    font-size:.85rem;
-    margin-left:3px;
-  }
-
-  .experience p{
-    color:var(--muted);
-    font-size:.94rem;
-    margin:3px 0 0;
-  }
-
-  /* =========================================================
-     PUBLICATIONS
-     ========================================================= */
-
-  .pubs{
-    list-style:none;
-    margin:0;
-    padding:0;
-  }
-
-  .pubs li{
-    padding:17px 0;
-    border-top:1px solid var(--line);
-  }
-
-  .pubs li:first-child{
-    border-top:0;
-    padding-top:0;
-  }
-
-  .pubs .t{
-    font-weight:600;
-    color:var(--ink);
-  }
-
-  .pubs .m{
-    color:var(--muted);
-    font-size:.94rem;
-    margin-top:3px;
-  }
-
-  .pubs .wp{
-    color:var(--accent);
-    font-weight:500;
-  }
-
-  /* =========================================================
-     EDUCATION
-     ========================================================= */
-
-  .education{
-    list-style:none;
-    margin:0;
-    padding:0;
-  }
-
-  .education li{
-    padding:14px 0;
-    border-top:1px solid var(--line);
-  }
-
-  .education li:first-child{
-    border-top:0;
-    padding-top:0;
-  }
-
-  .education .t{
-    font-weight:600;
-  }
-
-  .education .date{
-    color:var(--accent);
-    font-weight:500;
-    font-size:.85rem;
-    margin-left:3px;
-  }
-
-  .education p{
-    margin:3px 0 0;
-    color:var(--muted);
-    font-size:.94rem;
-  }
-
-  /* =========================================================
-     ENGAGEMENT
-     ========================================================= */
-
-  .engagement{
-    color:var(--muted);
-    max-width:var(--content);
-  }
-
-  .engagement strong{
-    color:var(--ink);
-    font-weight:500;
-  }
-
-  /* =========================================================
-     CONTACT
-     ========================================================= */
-
-  .contact-note{
-    max-width:600px;
-  }
-
-  /* =========================================================
-     MOBILE
-     ========================================================= */
-
-  .menu-btn{
-    display:none;
-  }
-
+    --content:640px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s,color .15s}
+  a:hover{color:var(--accent-d);border-bottom-color:currentColor}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .skip{position:absolute;left:-999px}
+  .skip:focus{left:12px;top:12px;background:var(--ink);color:#fff;padding:10px 14px;z-index:50}
+
+  .layout{display:grid;grid-template-columns:320px 1fr;max-width:1120px;margin:0 auto;min-height:100vh}
+
+  /* rail */
+  .rail{border-right:1px solid var(--line);background:var(--rail);padding:56px 40px;
+    position:sticky;top:0;height:100vh;display:flex;flex-direction:column}
+  .photo{width:110px;height:110px;border-radius:4px;border:1px solid var(--line);background:#EEF1F4;
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;
+    font-size:1.9rem;color:var(--accent);margin-bottom:22px;overflow:hidden}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .name{font-family:var(--serif);font-weight:600;font-size:1.72rem;line-height:1.1;margin:0}
+  .role{color:var(--muted);margin:8px 0 0;font-size:.98rem}
+  .affil{margin:14px 0 0;font-size:.9rem;color:var(--muted);line-height:1.5}
+  .affil b{color:var(--ink);font-weight:500}
+  .nav{margin-top:30px;display:flex;flex-direction:column}
+  .nav a{color:var(--ink);font-size:.92rem;font-weight:500;padding:7px 0 7px 14px;
+    border-left:2px solid var(--line);border-bottom:none}
+  .nav a:hover,.nav a.active{color:var(--accent);border-left-color:var(--accent)}
+  .rail-foot{margin-top:auto;padding-top:28px;font-size:.9rem}
+  .rail-foot .email{display:block;margin-bottom:8px}
+  .rail-foot .row{display:flex;flex-wrap:wrap;gap:6px 16px}
+  .rail-foot .row a{color:var(--muted)}
+  .rail-foot .row a:hover{color:var(--accent)}
+
+  /* content */
+  main{padding:64px 60px 90px;max-width:calc(var(--content) + 120px)}
+  section{margin-bottom:50px;scroll-margin-top:32px}
+  section:last-child{margin-bottom:0}
+  h2{font-family:var(--serif);font-weight:600;font-size:1.05rem;color:var(--ink);margin:0 0 16px;
+    padding-bottom:9px;border-bottom:1px solid var(--line)}
+  p{max-width:var(--content);margin:0 0 14px}
+  p:last-child{margin-bottom:0}
+
+  .lead{font-family:var(--serif);font-weight:500;font-size:1.42rem;line-height:1.42;margin-bottom:16px}
+  .note{color:var(--muted)}
+  .direction{margin-top:20px;padding:15px 20px;border-left:2px solid var(--accent);background:var(--rail)}
+  .direction p{margin:0;font-family:var(--serif);font-size:1rem;line-height:1.5}
+
+  .fields{margin-bottom:12px}
+  .fields .s{color:var(--muted);margin:0 .45em}
+  .diss{color:var(--muted);font-size:.95rem;margin-top:14px}
+  .diss em{color:var(--ink)}
+
+  .list{list-style:none;margin:0;padding:0}
+  .list li{padding:15px 0;border-top:1px solid var(--line)}
+  .list li:first-child{border-top:0;padding-top:0}
+  .list .t{font-weight:600;color:var(--ink)}
+  .list .k{color:var(--accent);font-weight:500;font-size:.84rem;margin-left:3px}
+  .list .date{color:var(--accent);font-weight:500;font-size:.85rem;margin-left:3px}
+  .list .m,.list p{color:var(--muted);font-size:.94rem;margin:3px 0 0}
+  .list .m em{font-style:italic}
+  .list .wp{color:var(--accent);font-weight:500}
+  .outreach{color:var(--muted);font-size:.94rem;margin-top:15px}
+
+  .menu-btn{display:none}
   @media (max-width:860px){
-
-    .layout{
-      grid-template-columns:1fr;
-    }
-
-    .rail{
-      position:static;
-      height:auto;
-      border-right:0;
-      border-bottom:1px solid var(--line);
-      padding:34px 26px 24px;
-      flex-direction:column;
-    }
-
-    .photo{
-      width:92px;
-      height:92px;
-      font-size:1.6rem;
-    }
-
-    .nav{
-      display:none;
-      margin-top:20px;
-    }
-
-    .nav.open{
-      display:flex;
-    }
-
-    .rail-foot{
-      margin-top:20px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-    }
-
-    .menu-btn{
-      display:inline-block;
-      align-self:flex-start;
-      margin-top:18px;
-      background:none;
-      border:1px solid var(--accent);
-      color:var(--accent);
-      font-family:var(--sans);
-      font-weight:500;
-      font-size:.85rem;
-      padding:7px 15px;
-      border-radius:999px;
-      cursor:pointer;
-    }
-
-    main{
-      padding:40px 26px 65px;
-    }
-
-    .lead{
-      font-size:1.28rem;
-    }
-
-    .research-policy{
-      grid-template-columns:1fr;
-      gap:26px;
-    }
-  }
-
-  @media (max-width:520px){
-
-    body{
-      font-size:16px;
-    }
-
-    .name{
-      font-size:1.6rem;
-    }
-
-    .lead{
-      font-size:1.22rem;
-    }
-
-    .direction{
-      padding:15px 17px;
-    }
+    .layout{grid-template-columns:1fr}
+    .rail{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);
+      padding:34px 26px 24px;flex-direction:column}
+    .photo{width:92px;height:92px;font-size:1.6rem}
+    .nav{display:none;margin-top:20px}
+    .nav.open{display:flex}
+    .rail-foot{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+    .menu-btn{display:inline-block;align-self:flex-start;margin-top:18px;background:none;
+      border:1px solid var(--accent);color:var(--accent);font-family:var(--sans);font-weight:500;
+      font-size:.85rem;padding:7px 15px;border-radius:999px;cursor:pointer}
+    main{padding:38px 26px 60px}
+    .lead{font-size:1.24rem}
   }
 </style>
 </head>
-
 <body>
-
 <a class="skip" href="#main">Skip to content</a>
-
 <div class="layout">
 
-  <!-- =======================================================
-       LEFT RAIL
-       ======================================================= -->
-
   <header class="rail">
-
-    <!--
-      To add your photograph, replace the initials with:
-
-      <img src="foto.jpg" alt="Marina Díez-Rituerto">
-
-      Keep the image square or close to square.
-    -->
-
+    <!-- Para tu foto: sustituye "MDR" por <img src="foto.jpg" alt="Marina Díez-Rituerto"> -->
     <div class="photo">MDR</div>
-
-    <h1 class="name">
-      Marina<br>Díez-Rituerto
-    </h1>
-
-    <p class="role">
-      Applied economist
-    </p>
-
+    <h1 class="name">Marina<br>Díez-Rituerto</h1>
+    <p class="role">Applied economist</p>
     <p class="affil">
       <b>PhD in Economics</b>, Universidad del País Vasco<br>
       <b>Deputy Director</b>, National Office of Foresight &amp; Strategy, Government of Spain
     </p>
 
-    <button
-      class="menu-btn"
-      aria-expanded="false"
-      aria-controls="nav">
-      Menu
-    </button>
-
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Sections">
       <a href="#about">About</a>
-      <a href="#research-policy">Research &amp; policy</a>
       <a href="#research">Research</a>
-      <a href="#policy">Policy work</a>
       <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
+      <a href="#policy">Policy</a>
+      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <div class="rail-foot">
-      <a class="email" href="mailto:diezritu@gmail.com">
-        diezritu@gmail.com
-      </a>
-
+      <a class="email" href="mailto:diezritu@gmail.com">diezritu@gmail.com</a>
       <div class="row">
-        <a href="https://www.linkedin.com/in/mdiezritu/">
-          LinkedIn
-        </a>
-        <a href="cv.pdf">
-          CV (PDF)
-        </a>
+        <a href="https://www.linkedin.com/in/mdiezritu/">LinkedIn</a>
+        <a href="cv.pdf">CV (PDF)</a>
       </div>
     </div>
-
   </header>
-
-
-  <!-- =======================================================
-       MAIN
-       ======================================================= -->
 
   <main id="main">
 
-
-    <!-- =====================================================
-         ABOUT
-         ===================================================== -->
-
-    <section id="about" class="hero">
-
-      <div class="eyebrow">
-        Applied economics · Research · Public policy
-      </div>
-
-      <p class="lead">
-        I work at the intersection of applied economic research and public
-        policy, using evidence to understand how institutions, incentives,
-        and economic change shape people’s opportunities and wellbeing.
-      </p>
-
-      <p class="hero-note">
-        My research examines labour markets, gender, competition, and
-        decision-making. Alongside my academic work, I work on long-term
-        policy questions at the National Office of Foresight &amp; Strategy
-        at the Presidency of the Government of Spain.
-      </p>
-
+    <section id="about">
+      <p class="lead">I work at the intersection of applied economic research and public policy,
+        using evidence to understand how institutions and incentives shape people's opportunities
+        and wellbeing.</p>
+      <p class="note">My research examines labour markets, gender, and decision-making. Alongside it,
+        I work on long-term policy questions at the National Office of Foresight &amp; Strategy, in
+        the Presidency of the Government of Spain.</p>
       <div class="direction">
-        <p>
-          My work moves in both directions: from research to policy, and
-          from policy challenges back to research questions.
-        </p>
+        <p>My work runs in both directions: from research to policy, and from real-world policy
+          challenges back to new research questions.</p>
       </div>
-
     </section>
-
-
-    <!-- =====================================================
-         RESEARCH & POLICY
-         ===================================================== -->
-
-    <section id="research-policy">
-
-      <h2>
-        Research &amp; policy
-      </h2>
-
-      <p class="intro">
-        I approach economic questions from two complementary perspectives:
-        empirical research on individual behaviour and institutions, and
-        direct experience with the policy questions that arise in practice.
-      </p>
-
-      <div class="research-policy">
-
-        <div class="column">
-
-          <h3>
-            Research
-          </h3>
-
-          <p>
-            My academic research studies labour-market decisions, gender,
-            competition, and the allocation of opportunities in high-skilled
-            settings. My PhD thesis examines how selection and competition
-            shape access to medical training and subsequent career choices
-            in Spain.
-          </p>
-
-        </div>
-
-
-        <div class="column">
-
-          <h3>
-            Policy
-          </h3>
-
-          <p>
-            In government, I work on long-term questions where economic
-            evidence must be considered alongside uncertainty, institutional
-            constraints, and competing policy objectives. My work has included
-            migration and demographic change, artificial intelligence, and
-            the future of the welfare state.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="questions">
-
-        <h3>
-          From policy questions to research questions
-        </h3>
-
-        <p>
-          Real-world policy challenges often raise questions that cannot be
-          answered by existing evidence alone. Economic research can help
-          identify mechanisms, test explanations, and understand how
-          institutions and incentives shape outcomes.
-        </p>
-
-        <p>
-          This is the perspective I bring to applied research: starting from
-          questions that matter, using rigorous empirical methods to understand
-          them, and keeping sight of the institutions and people to whom the
-          evidence ultimately matters.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         RESEARCH
-         ===================================================== -->
 
     <section id="research">
-
-      <h2>
-        Research
-      </h2>
-
-      <p class="fields">
-        Labour economics
-        <span class="s">/</span>
-        Gender
-        <span class="s">/</span>
-        Behavioural economics
-      </p>
-
-      <p class="research-description">
-        My research focuses on how people make important educational and
-        career decisions, and how competition, incentives, and institutional
-        environments affect access to opportunities.
-      </p>
-
-      <p class="diss">
-        My PhD thesis,
-        <em>
-          Selection, Competition, and Allocation in High-Skilled Labour
-          Markets: Evidence from Medical Training in Spain
-        </em>,
-        studies these questions in the context of medical training.
-        Supervised by Nagore Iriberri and Pedro Rey-Biel.
-      </p>
-
+      <h2>Research</h2>
+      <p class="fields">Labour economics<span class="s">/</span>Gender<span class="s">/</span>Behavioural economics</p>
+      <p class="note">I study how people make important educational and career decisions, and how
+        competition, incentives, and institutions shape their access to opportunities.</p>
+      <p class="diss">PhD thesis: <em>Selection, Competition, and Allocation in High-Skilled Labour
+        Markets: Evidence from Medical Training in Spain</em> — supervised by Nagore Iriberri and
+        Pedro Rey-Biel.</p>
     </section>
-
-
-    <!-- =====================================================
-         POLICY WORK
-         ===================================================== -->
-
-    <section id="policy">
-
-      <h2>
-        Policy work
-      </h2>
-
-      <p class="intro">
-        My policy work focuses on long-term economic and social change,
-        particularly where evidence needs to be combined with uncertainty
-        about future developments.
-      </p>
-
-      <ul class="work">
-
-        <li>
-          <div class="t">
-            HispanIA 2040
-            <span class="k">foresight strategy</span>
-          </div>
-
-          <p>
-            Developed Spain’s first national foresight strategy on how
-            artificial intelligence can shape a better future for all
-            and a stronger welfare state.
-          </p>
-        </li>
-
-
-        <li>
-          <div class="t">
-            España ante el reto migratorio
-            <span class="k">foresight study</span>
-          </div>
-
-          <p>
-            Directed the Office’s foresight study on migration and
-            demographic change, bringing long-term demographic evidence
-            into public and government debate.
-          </p>
-        </li>
-
-
-        <li>
-          <div class="t">
-            Foresight capacity-building across ministries
-            <span class="k">training</span>
-          </div>
-
-          <p>
-            Facilitated workshops training public officials in foresight
-            tools and horizon-scanning on priority policy issues.
-          </p>
-        </li>
-
-
-        <li>
-          <div class="t">
-            Climate adaptation economics
-            <span class="k">consultancy · Ricardo E&amp;E</span>
-          </div>
-
-          <p>
-            Worked on economic assessments for the European Commission
-            (CINEA), the Government of Malta, and EuroClima+ in Panama,
-            including climate-transition investment needs, macroeconomic
-            impacts, and public perceptions of climate change.
-          </p>
-        </li>
-
-      </ul>
-
-    </section>
-
-
-    <!-- =====================================================
-         EXPERIENCE
-         ===================================================== -->
-
-    <section id="experience">
-
-      <h2>
-        Experience
-      </h2>
-
-      <ul class="experience">
-
-        <li>
-          <div class="t">
-            National Office of Foresight &amp; Strategy,
-            Presidency of the Government of Spain
-            <span class="date">2025–present</span>
-          </div>
-
-          <p>
-            Deputy Director
-          </p>
-        </li>
-
-
-        <li>
-          <div class="t">
-            National Office of Foresight &amp; Strategy,
-            Presidency of the Government of Spain
-            <span class="date">2024–2025</span>
-          </div>
-
-          <p>
-            Senior Policy Analyst
-          </p>
-        </li>
-
-
-        <li>
-          <div class="t">
-            Ricardo Energy &amp; Environment
-            <span class="date">2021–2024</span>
-          </div>
-
-          <p>
-            Economist / Junior Economist
-          </p>
-        </li>
-
-
-        <li>
-          <div class="t">
-            Trilateral Research, London
-            <span class="date">2020–2021</span>
-          </div>
-
-          <p>
-            Research Assistant
-          </p>
-        </li>
-
-
-        <li>
-          <div class="t">
-            Institute for Public Goods and Policies (IPP | CSIC)
-            <span class="date">2018</span>
-          </div>
-
-          <p>
-            Research Assistant
-          </p>
-        </li>
-
-      </ul>
-
-    </section>
-
-
-    <!-- =====================================================
-         PUBLICATIONS
-         ===================================================== -->
 
     <section id="publications">
-
-      <h2>
-        Publications
-      </h2>
-
-      <ul class="pubs">
-
+      <h2>Publications</h2>
+      <ul class="list">
         <li>
-
-          <div class="t">
-            Gender differences in willingness to guess revisited:
-            Heterogeneity in a high stakes professional setting
-          </div>
-
-          <div class="m">
-            with J. Gardeazabal, N. Iriberri &amp; P. Rey-Biel —
-            <em>
-              Journal of Economic Behavior &amp; Organization
-            </em>,
-            242 (2026)
-          </div>
-
+          <div class="t">Gender differences in willingness to guess revisited</div>
+          <div class="m">with J. Gardeazabal, N. Iriberri &amp; P. Rey-Biel — <em>Journal of Economic Behavior &amp; Organization</em>, 242 (2026)</div>
         </li>
-
-
         <li>
-
-          <div class="t">
-            Gender gaps in access to medical intern positions:
-            The role of competition
-          </div>
-
-          <div class="m">
-            with J. Gardeazabal, N. Iriberri &amp; P. Rey-Biel —
-            <em>
-              Journal of Labor Economics
-            </em>
-            (2025)
-          </div>
-
+          <div class="t">Gender gaps in access to medical intern positions: the role of competition</div>
+          <div class="m">with J. Gardeazabal, N. Iriberri &amp; P. Rey-Biel — <em>Journal of Labor Economics</em> (2025)</div>
         </li>
-
-
         <li>
-
-          <div class="t">
-            Socio-economic impact assessments for new and emerging
-            technologies
-          </div>
-
-          <div class="m">
-            with R. Rodrigues —
-            <em>
-              Journal of Responsible Technology
-            </em>,
-            9 (2022)
-          </div>
-
+          <div class="t">Socio-economic impact assessments for new and emerging technologies</div>
+          <div class="m">with R. Rodrigues — <em>Journal of Responsible Technology</em>, 9 (2022)</div>
         </li>
-
-
         <li>
-
-          <div class="t">
-            Home bias in early labor location choices:
-            Does university location matter?
-          </div>
-
-          <div class="m">
-            <span class="wp">Working paper</span> —
-            with J. Gardeazabal, N. Iriberri &amp; P. Rey-Biel
-          </div>
-
+          <div class="t">Home bias in early labour location choices: does university location matter?</div>
+          <div class="m"><span class="wp">Working paper</span> — with J. Gardeazabal, N. Iriberri &amp; P. Rey-Biel</div>
         </li>
-
       </ul>
-
-      <p class="diss">
-        Outreach:
-        <a href="https://nadaesgratis.es/">Nada es Gratis</a>,
-        VoxEU/CEPR.
-      </p>
-
+      <p class="outreach">Outreach: <a href="https://nadaesgratis.es/">Nada es Gratis</a>, VoxEU/CEPR.</p>
     </section>
 
-
-    <!-- =====================================================
-         EDUCATION
-         ===================================================== -->
+    <section id="policy">
+      <h2>Policy &amp; foresight</h2>
+      <ul class="list">
+        <li>
+          <div class="t">HispanIA 2040 <span class="k">foresight strategy</span></div>
+          <p>Spain's first national foresight strategy on how artificial intelligence can shape a stronger welfare state.</p>
+        </li>
+        <li>
+          <div class="t">España ante el reto migratorio <span class="k">foresight study</span></div>
+          <p>Study on migration and demographic change, bringing long-term evidence into public debate.</p>
+        </li>
+        <li>
+          <div class="t">Climate adaptation economics <span class="k">consultancy · Ricardo E&amp;E</span></div>
+          <p>Economic assessments for the European Commission (CINEA), the Government of Malta, and EuroClima+ (Panama).</p>
+        </li>
+      </ul>
+    </section>
 
     <section id="education">
-
-      <h2>
-        Education
-      </h2>
-
-      <ul class="education">
-
-        <li>
-
-          <div class="t">
-            PhD in Economics
-            <span class="date">2022–2026</span>
-          </div>
-
-          <p>
-            Universidad del País Vasco (UPV/EHU), Bilbao
-          </p>
-
-          <p>
-            Supervisors: Nagore Iriberri and Pedro Rey-Biel
-          </p>
-
-        </li>
-
-
-        <li>
-
-          <div class="t">
-            MSc in Economics
-            <span class="date">2019–2020</span>
-          </div>
-
-          <p>
-            Tilburg University
-          </p>
-
-        </li>
-
-
-        <li>
-
-          <div class="t">
-            BA in Economics
-            <span class="date">2014–2018</span>
-          </div>
-
-          <p>
-            Universidad Carlos III de Madrid
-          </p>
-
-        </li>
-
+      <h2>Education</h2>
+      <ul class="list">
+        <li><div class="t">PhD in Economics <span class="date">2022–2026</span></div><p>Universidad del País Vasco (UPV/EHU), Bilbao</p></li>
+        <li><div class="t">MSc in Economics <span class="date">2019–2020</span></div><p>Tilburg University</p></li>
+        <li><div class="t">BA in Economics <span class="date">2014–2018</span></div><p>Universidad Carlos III de Madrid</p></li>
       </ul>
-
     </section>
-
-
-    <!-- =====================================================
-         POLICY ENGAGEMENT
-         ===================================================== -->
-
-    <section id="engagement">
-
-      <h2>
-        Policy engagement
-      </h2>
-
-      <p class="engagement">
-        My policy work also involves working with public institutions and
-        international policy networks. I have participated in the
-        <strong>EU-wide Foresight Network</strong> at Sherpa level,
-        facilitated foresight and horizon-scanning workshops across
-        ministries, and facilitated a workshop on weak signals and
-        scenarios for the <strong>OECD Global Foresight Community</strong>.
-      </p>
-
-    </section>
-
-
-    <!-- =====================================================
-         CONTACT
-         ===================================================== -->
 
     <section id="contact">
-
-      <h2>
-        Contact
-      </h2>
-
-      <p class="contact-note">
-        I am interested in research and policy questions around economic
-        behaviour, institutions, labour markets, and long-term social and
-        economic change.
-      </p>
-
-      <p>
-        Reach me at
-        <a href="mailto:diezritu@gmail.com">
-          diezritu@gmail.com
-        </a>.
-      </p>
-
+      <h2>Contact</h2>
+      <p>Reach me at <a href="mailto:diezritu@gmail.com">diezritu@gmail.com</a>. I'm glad to hear from
+        collaborators, students, and anyone interested in my work — in research or in policy.</p>
     </section>
 
-
   </main>
-
 </div>
 
-
-<!-- =========================================================
-     JAVASCRIPT
-     ========================================================= -->
-
 <script>
-
-  /* Mobile navigation */
-
-  const btn = document.querySelector('.menu-btn');
-  const nav = document.getElementById('nav');
-
-  btn.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-
-    btn.setAttribute(
-      'aria-expanded',
-      open ? 'true' : 'false'
-    );
-  });
-
-
-  /* Close mobile menu after selecting a section */
-
-  nav.querySelectorAll('a').forEach(a => {
-
-    a.addEventListener('click', () => {
-
-      nav.classList.remove('open');
-
-      btn.setAttribute(
-        'aria-expanded',
-        'false'
-      );
-
-    });
-
-  });
-
-
-  /* Highlight current section */
-
-  const links = [...nav.querySelectorAll('a')];
-
-  const map = new Map(
-    links.map(a => [
-      a.getAttribute('href').slice(1),
-      a
-    ])
-  );
-
-
-  const observer = new IntersectionObserver(
-
-    entries => {
-
-      entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-
-          links.forEach(link =>
-            link.classList.remove('active')
-          );
-
-          map
-            .get(entry.target.id)
-            ?.classList.add('active');
-
-        }
-
-      });
-
-    },
-
-    {
-      rootMargin:'-25% 0px -65% 0px'
-    }
-
-  );
-
-
-  document
-    .querySelectorAll('section')
-    .forEach(section =>
-      observer.observe(section)
-    );
-
+  const btn=document.querySelector('.menu-btn'), nav=document.getElementById('nav');
+  btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false')});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}));
+  const links=[...nav.querySelectorAll('a')], map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));map.get(e.target.id)?.classList.add('active')}}),{rootMargin:'-25% 0px -65% 0px'});
+  document.querySelectorAll('section').forEach(s=>obs.observe(s));
 </script>
-
 </body>
 </html>
