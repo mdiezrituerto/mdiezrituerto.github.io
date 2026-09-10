@@ -95,10 +95,11 @@ a:hover{color:var(--accent-soft)}
 .hero-actions a:hover{border-bottom-color:var(--accent-soft)}
 
 /* retrato */
-.portrait{margin:6px 0 0;position:relative}
+.portrait{max-width:230px;margin-left:auto}
 .portrait img{
-  width:100%;aspect-ratio:4/5;object-fit:cover;display:block;
-  border-radius:3px;filter:saturate(.95);
+  width:100%;aspect-ratio:1/1;object-fit:cover;object-position:60% 35%;
+  display:block;border-radius:50%;
+  filter:saturate(.72) contrast(.96);
 }
 .portrait-empty{
   width:100%;aspect-ratio:4/5;border:1px dashed var(--line);border-radius:3px;
