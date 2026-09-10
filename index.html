@@ -3,225 +3,86 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marina Díez-Rituerto — Applied Economist</title>
-<meta name="description" content="Marina Díez-Rituerto — applied economist working across academic research and public policy.">
+<title>Marina Díez-Rituerto — Economist</title>
+<meta name="description" content="Marina Díez-Rituerto, applied economist (PhD) working across academic research and public policy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#FFFFFF; --ink:#16181D; --muted:#5A6169; --line:#E7E8EB;
-    --accent:#274C6B; --accent-d:#1B3750; --rail:#FAFBFC;
-    --serif:"IBM Plex Serif",Georgia,serif;
-    --sans:"IBM Plex Sans",system-ui,sans-serif;
-    --content:640px;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
-    font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s,color .15s}
-  a:hover{color:var(--accent-d);border-bottom-color:currentColor}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-  .skip{position:absolute;left:-999px}
-  .skip:focus{left:12px;top:12px;background:var(--ink);color:#fff;padding:10px 14px;z-index:50}
-
-  .layout{display:grid;grid-template-columns:320px 1fr;max-width:1120px;margin:0 auto;min-height:100vh}
-
-  /* rail */
-  .rail{border-right:1px solid var(--line);background:var(--rail);padding:56px 40px;
-    position:sticky;top:0;height:100vh;display:flex;flex-direction:column}
-  .photo{width:110px;height:110px;border-radius:4px;border:1px solid var(--line);background:#EEF1F4;
-    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;
-    font-size:1.9rem;color:var(--accent);margin-bottom:22px;overflow:hidden}
-  .photo img{width:100%;height:100%;object-fit:cover;display:block}
-  .name{font-family:var(--serif);font-weight:600;font-size:1.72rem;line-height:1.1;margin:0}
-  .role{color:var(--muted);margin:8px 0 0;font-size:.98rem}
-  .affil{margin:14px 0 0;font-size:.9rem;color:var(--muted);line-height:1.5}
-  .affil b{color:var(--ink);font-weight:500}
-  .nav{margin-top:30px;display:flex;flex-direction:column}
-  .nav a{color:var(--ink);font-size:.92rem;font-weight:500;padding:7px 0 7px 14px;
-    border-left:2px solid var(--line);border-bottom:none}
-  .nav a:hover,.nav a.active{color:var(--accent);border-left-color:var(--accent)}
-  .rail-foot{margin-top:auto;padding-top:28px;font-size:.9rem}
-  .rail-foot .email{display:block;margin-bottom:8px}
-  .rail-foot .row{display:flex;flex-wrap:wrap;gap:6px 16px}
-  .rail-foot .row a{color:var(--muted)}
-  .rail-foot .row a:hover{color:var(--accent)}
-
-  /* content */
-  main{padding:64px 60px 90px;max-width:calc(var(--content) + 120px)}
-  section{margin-bottom:50px;scroll-margin-top:32px}
-  section:last-child{margin-bottom:0}
-  h2{font-family:var(--serif);font-weight:600;font-size:1.05rem;color:var(--ink);margin:0 0 16px;
-    padding-bottom:9px;border-bottom:1px solid var(--line)}
-  p{max-width:var(--content);margin:0 0 14px}
-  p:last-child{margin-bottom:0}
-
-  .lead{font-family:var(--serif);font-weight:500;font-size:1.42rem;line-height:1.42;margin-bottom:16px}
-  .note{color:var(--muted)}
-  .direction{margin-top:20px;padding:15px 20px;border-left:2px solid var(--accent);background:var(--rail)}
-  .direction p{margin:0;font-family:var(--serif);font-size:1rem;line-height:1.5}
-
-  .fields{margin-bottom:12px}
-  .fields .s{color:var(--muted);margin:0 .45em}
-  .diss{color:var(--muted);font-size:.95rem;margin-top:14px}
-  .diss em{color:var(--ink)}
-
-  .list{list-style:none;margin:0;padding:0}
-  .list li{padding:15px 0;border-top:1px solid var(--line)}
-  .list li:first-child{border-top:0;padding-top:0}
-  .list .t{font-weight:600;color:var(--ink)}
-  .list .k{color:var(--accent);font-weight:500;font-size:.84rem;margin-left:3px}
-  .list .date{color:var(--accent);font-weight:500;font-size:.85rem;margin-left:3px}
-  .list .m,.list p{color:var(--muted);font-size:.94rem;margin:3px 0 0}
-  .list .m em{font-style:italic}
-  .list .wp{color:var(--accent);font-weight:500}
-  .outreach{color:var(--muted);font-size:.94rem;margin-top:15px}
-
-  .menu-btn{display:none}
-  @media (max-width:860px){
-    .layout{grid-template-columns:1fr}
-    .rail{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);
-      padding:34px 26px 24px;flex-direction:column}
-    .photo{width:92px;height:92px;font-size:1.6rem}
-    .nav{display:none;margin-top:20px}
-    .nav.open{display:flex}
-    .rail-foot{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
-    .menu-btn{display:inline-block;align-self:flex-start;margin-top:18px;background:none;
-      border:1px solid var(--accent);color:var(--accent);font-family:var(--sans);font-weight:500;
-      font-size:.85rem;padding:7px 15px;border-radius:999px;cursor:pointer}
-    main{padding:38px 26px 60px}
-    .lead{font-size:1.24rem}
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="layout">
 
-  <header class="rail">
-    <!-- Para tu foto: sustituye "MDR" por <img src="foto.jpg" alt="Marina Díez-Rituerto"> -->
-    <div class="photo">MDR</div>
-    <h1 class="name">Marina<br>Díez-Rituerto</h1>
-    <p class="role">Applied economist</p>
-    <p class="affil">
-      <b>PhD in Economics</b>, Universidad del País Vasco<br>
-      <b>Deputy Director</b>, National Office of Foresight &amp; Strategy, Government of Spain
-    </p>
+<main id="main">
 
-    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
-    <nav class="nav" id="nav" aria-label="Sections">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#policy">Policy</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <section class="hero">
+    <div class="wrap">
 
-    <div class="rail-foot">
-      <a class="email" href="mailto:diezritu@gmail.com">diezritu@gmail.com</a>
-      <div class="row">
-        <a href="https://www.linkedin.com/in/mdiezritu/">LinkedIn</a>
-        <a href="cv.pdf">CV (PDF)</a>
+      <div>
+        <h1>Marina<span class="surname">Díez-Rituerto</span></h1>
+
+        <p class="kicker">Economist (PhD)<span class="sep">/</span>Public policy &amp; research</p>
+
+        <p class="lead">Applied economist working at the point where scientific evidence meets policy.</p>
+
+        <p class="body">I use research to inform better decisions, and the questions that arise in
+          practice to push the scientific frontier. My work sits at the intersection of applied
+          economic research and public policy, with a particular focus on how
+          <b>institutions and incentives shape people's choices</b> — and how those choices
+          translate into unequal access to opportunities and, ultimately, wellbeing.</p>
+
+        <p class="body">I currently serve as <b>Deputy Director</b> at the National Office of
+          Foresight and Strategy, in the Presidency of the Government of Spain, where I lead a team
+          producing multidisciplinary analysis on the long-term challenges facing the country.</p>
+
+        <p class="hero-actions">
+          <a href="mailto:diezritu@gmail.com">diezritu@gmail.com</a>
+          <a href="cv.pdf">Download CV</a>
+          <a href="https://www.linkedin.com/in/mdiezritu/">LinkedIn</a>
+        </p>
       </div>
+
+      <!-- FOTO: sustituye el <div class="portrait-empty">…</div> por
+           <img src="foto.jpg" alt="Marina Díez-Rituerto"> -->
+      <figure class="portrait">
+        <div class="portrait-empty">Añade aquí foto.jpg<br>(retrato vertical, 4:5)</div>
+      </figure>
+
     </div>
-  </header>
+  </section>
 
-  <main id="main">
+  <section class="doors" aria-label="Sections">
+    <div class="wrap">
 
-    <section id="about">
-      <p class="lead">I work at the point where scientific evidence meets policy: 
-        using research to inform better decisions, and using the questions that arise 
-        in practice to push the scientific frontier</p>
-      <p class="note">My research examines how institutions, and incentives shape people’s choices, 
-        and how these translate into unequal access to opportunitiesg. Alongside it,
-        I work on long-term policy questions at the National Office of Foresight &amp; Strategy, in
-        the Presidency of the Government of Spain.</p>
-      <div class="direction">
-        <p>My work runs in both directions: from research to policy, and from real-world policy
-          challenges back to new research questions.</p>
-      </div>
-    </section>
+      <a class="door" href="research.html">
+        <span class="no">01</span>
+        <h2>Research</h2>
+        <p>How competition, incentives and institutions shape access to opportunities in education
+          and the labour market.</p>
+      </a>
 
-    <section id="research">
-      <h2>Research</h2>
-      <p class="fields">Labour economics<span class="s">/</span>Gender<span class="s">/</span>Behavioural economics</p>
-      <p class="note">I study how people make important educational and career decisions, and how
-        competition, incentives, and institutions shape their access to opportunities.</p>
-      <p class="diss">PhD thesis: <em>Selection, Competition, and Allocation in High-Skilled Labour
-        Markets: Evidence from Medical Training in Spain</em> — supervised by Nagore Iriberri and
-        Pedro Rey-Biel.</p>
-    </section>
+      <a class="door" href="policy.html">
+        <span class="no">02</span>
+        <h2>Policy</h2>
+        <p>Long-term analysis at the centre of the Spanish government, and climate policy advice
+          from outside it.</p>
+      </a>
 
-    <section id="publications">
-      <h2>Publications</h2>
-      <ul class="list">
-        <li>
-          <div class="t">Gender differences in willingness to guess revisited</div>
-          <div class="m">with J. Gardeazabal, N. Iriberri &amp; P. Rey-Biel — <em>Journal of Economic Behavior &amp; Organization</em>, 242 (2026)</div>
-        </li>
-        <li>
-          <div class="t">Gender gaps in access to medical intern positions: the role of competition</div>
-          <div class="m">with J. Gardeazabal, N. Iriberri &amp; P. Rey-Biel — <em>Journal of Labor Economics</em> (2025)</div>
-        </li>
-        <li>
-          <div class="t">Socio-economic impact assessments for new and emerging technologies</div>
-          <div class="m">with R. Rodrigues — <em>Journal of Responsible Technology</em>, 9 (2022)</div>
-        </li>
-        <li>
-          <div class="t">Home bias in early labour location choices: does university location matter?</div>
-          <div class="m"><span class="wp">Working paper</span> — with J. Gardeazabal, N. Iriberri &amp; P. Rey-Biel</div>
-        </li>
-      </ul>
-      <p class="outreach">Outreach: <a href="https://nadaesgratis.es/">Nada es Gratis</a>, VoxEU/CEPR.</p>
-    </section>
+    </div>
+  </section>
 
-    <section id="policy">
-      <h2>Policy &amp; foresight</h2>
-      <ul class="list">
-        <li>
-          <div class="t">HispanIA 2040 <span class="k">foresight strategy</span></div>
-          <p>Spain's first national foresight strategy on how artificial intelligence can shape a stronger welfare state.</p>
-        </li>
-        <li>
-          <div class="t">España ante el reto migratorio <span class="k">foresight study</span></div>
-          <p>Study on migration and demographic change, bringing long-term evidence into public debate.</p>
-        </li>
-        <li>
-          <div class="t">Climate adaptation economics <span class="k">consultancy · Ricardo E&amp;E</span></div>
-          <p>Economic assessments for the European Commission (CINEA), the Government of Malta, and EuroClima+ (Panama).</p>
-        </li>
-      </ul>
-    </section>
+</main>
 
-    <section id="education">
-      <h2>Education</h2>
-      <ul class="list">
-        <li><div class="t">PhD in Economics <span class="date">2022–2026</span></div><p>Universidad del País Vasco (UPV/EHU), Bilbao</p></li>
-        <li><div class="t">MSc in Economics <span class="date">2019–2020</span></div><p>Tilburg University</p></li>
-        <li><div class="t">BA in Economics <span class="date">2014–2018</span></div><p>Universidad Carlos III de Madrid</p></li>
-      </ul>
-    </section>
+<footer class="foot">
+  <div class="wrap">
+    <span>Madrid, Spain</span>
+    <span class="links">
+      <a href="mailto:diezritu@gmail.com">Email</a>
+      <a href="cv.pdf">CV</a>
+      <a href="https://www.linkedin.com/in/mdiezritu/">LinkedIn</a>
+    </span>
+  </div>
+</footer>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Reach me at <a href="mailto:diezritu@gmail.com">diezritu@gmail.com</a>. I'm glad to hear from
-        collaborators, students, and anyone interested in my work — in research or in policy.</p>
-    </section>
-
-  </main>
-</div>
-
-<script>
-  const btn=document.querySelector('.menu-btn'), nav=document.getElementById('nav');
-  btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false')});
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}));
-  const links=[...nav.querySelectorAll('a')], map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
-  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));map.get(e.target.id)?.classList.add('active')}}),{rootMargin:'-25% 0px -65% 0px'});
-  document.querySelectorAll('section').forEach(s=>obs.observe(s));
-</script>
 </body>
 </html>
